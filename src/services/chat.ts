@@ -176,6 +176,9 @@ class ChatService {
       {
         model: DEFAULT_AGENT_CONFIG.model,
         stream: true,
+        stream_options: {
+          include_usage: true,
+        },
         ...DEFAULT_AGENT_CONFIG.params,
       },
       params,
@@ -248,7 +251,14 @@ class ChatService {
     }
 
     const payload = merge(
-      { model: DEFAULT_AGENT_CONFIG.model, stream: true, ...DEFAULT_AGENT_CONFIG.params },
+      {
+        model: DEFAULT_AGENT_CONFIG.model,
+        stream: true,
+        stream_options: {
+          include_usage: true,
+        },
+        ...DEFAULT_AGENT_CONFIG.params,
+      },
       { ...res, model },
     );
 
