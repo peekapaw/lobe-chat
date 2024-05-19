@@ -30,7 +30,7 @@
     "postbuild": "npm run build-sitemap",
     "build-sitemap": "next-sitemap --config next-sitemap.config.mjs",
     "build:analyze": "ANALYZE=true next build",
-    "build:docker": "DOCKER=true next build && npm run build-sitemap",
+    "build:docker": "DOCKER=true next build",
     "dev": "next dev -p 3010",
     "dev:clerk-proxy": "ngrok http http://localhost:3011",
     "docs:i18n": "lobe-i18n md && npm run workflow:docs && npm run lint:mdx",

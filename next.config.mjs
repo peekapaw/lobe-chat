@@ -68,15 +68,16 @@ const noWrapper = (config) => config;
 
 const withBundleAnalyzer = process.env.ANALYZE === 'true' ? analyzer() : noWrapper;
 
-const withPWA = isProd
-  ? nextPWA({
-      dest: 'public',
-      register: true,
-      workboxOptions: {
-        skipWaiting: true,
-      },
-    })
-  : noWrapper;
+const withPWA = noWrapper;
+// const withPWA = isProd
+//   ? nextPWA({
+//       dest: 'public',
+//       register: true,
+//       workboxOptions: {
+//         skipWaiting: true,
+//       },
+//     })
+//   : noWrapper;
 
 const hasSentry = !!process.env.NEXT_PUBLIC_SENTRY_DSN;
 const withSentry =
